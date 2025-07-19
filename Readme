@@ -21,8 +21,9 @@
 13. [CI/CD Pipeline](#13-cicd-pipeline)
 14. [Security & Privacy](#14-security--privacy)
 15. [Roadmap & Milestones](#15-roadmap--milestones)
-16. [Contribution Guidelines](#16-contribution-guidelines)
-17. [License](#17-license)
+16. [Branch Workflow](#16-branch-workflow)
+17. [Contribution Guidelines](#17-contribution-guidelines)
+18. [License](#18-license)
 
 ---
 
@@ -238,7 +239,16 @@ Secrets stored as GitHub encrypted secrets (`APPSTORE_CONNECT_API_KEY`, `PLAY_KE
 
 ---
 
-## 16  Contribution Guidelines
+## 16  Branch Workflow
+
+* `main` – protected release branch; enable GitHub branch protection so merges require a review and green CI.
+* `alpha` – created from `main` for early milestone work. Feature branches merge here until Alpha is feature complete.
+* `beta` – forked from `main` for stabilization after Alpha. Bug fixes and polish land here before final merge back to `main`.
+* Feature branches (`feat/`, `fix/`, `docs/`) start from the active milestone branch (`alpha` or `beta`).
+
+---
+
+## 17  Contribution Guidelines
 
 * **Branch naming:** `feat/<scope>`, `fix/<scope>`, `docs/<scope>`.
 * **Commits:** Conventional Commits (`feat:`, `fix:`, `perf:`) with footer `Refs #<requirement‑id>`.
@@ -250,7 +260,7 @@ PRs auto‑labelled via `.github/labeler.yml`.
 
 ---
 
-## 17  License
+## 18  License
 
 Code released under **MIT License** (see `LICENSE`).  Third‑party dependencies retain their respective licenses – see `THIRD_PARTY_NOTICES.md`.
 
