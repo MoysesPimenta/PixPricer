@@ -1,7 +1,16 @@
 include: package:flutter_lints/flutter.yaml
 
 analyzer:
+  plugins:
+    - riverpod_lint
   exclude:
     - 'build/**'
   errors:
     todo: error
+    public_member_api_docs: error
+    prefer_const_constructors: error
+
+linter:
+  rules:
+    public_member_api_docs: true
+    prefer_const_constructors: true

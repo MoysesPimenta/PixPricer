@@ -4,5 +4,5 @@ packages:
   - .
 
 scripts:
-  lint: flutter analyze
+  lint: flutter analyze --no-pub --fatal-infos --fatal-warnings
   format: flutter format .
