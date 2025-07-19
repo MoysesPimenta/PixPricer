@@ -19,4 +19,4 @@ if [[ -n "$STAGED_DART_FILES" ]]; then
 fi
 
 # Always run tests with coverage
-$FVM_CMD test --coverage
+scripts/run_tests.sh

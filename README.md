@@ -205,6 +205,7 @@ Add perf tests under `benchmark/` – run on GitHub Actions nightly.
 * **End‑to‑End (Beta):** Firebase Test Lab ‑‑> 5 device matrix.
 
 CI will fail PR if any test fails or coverage <90 %.
+Use `scripts/run_tests.sh` to run tests locally with coverage enforcement.
 
 ---
 
