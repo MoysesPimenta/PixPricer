@@ -23,7 +23,8 @@ dependencies:
   riverpod: any
   flutter_riverpod: any
   drift: any
-  sqlite3_flutter_libs: any
+  sqlcipher_flutter_libs: any
+  path_provider: any
 
 dev_dependencies:
   flutter_test:
