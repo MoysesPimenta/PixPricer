@@ -170,7 +170,7 @@ class Item with _$Item {
 }
 ```
 
-Full schema tables auto‑generated in Drift; see `lib/src/infrastructure/db/schema.drift`.
+Full schema tables auto‑generated in Drift; see `lib/src/infrastructure/db/app_database.dart`.
 
 ---
 
