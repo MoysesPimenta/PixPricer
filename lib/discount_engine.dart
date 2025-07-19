@@ -1,3 +1,5 @@
+export 'src/discount/rules.dart';
+
 /// Discount engine utilities.
 ///
 /// Provides helpers to apply discounts to prices.
