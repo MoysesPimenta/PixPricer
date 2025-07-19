@@ -1,0 +1,40 @@
+name: Benchmark
+
+on:
+  schedule:
+    - cron: '0 1 * * *'
+  workflow_dispatch:
+
+jobs:
+  benchmark:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Cache Flutter SDK
+        uses: actions/cache@v3
+        with:
+          path: ~/flutter
+          key: ${{ runner.os }}-flutter-${{ hashFiles('**/pubspec.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-flutter-
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.22.0'
+          cache: true
+      - name: Cache pub packages
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.pub-cache
+          key: ${{ runner.os }}-pub-${{ hashFiles('**/pubspec.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pub-
+      - run: flutter pub get
+      - name: Run Benchmarks
+        run: dart benchmark/run_benchmarks.dart
+      - uses: actions/upload-artifact@v3
+        with:
+          name: benchmark-results
+          path: benchmark/results
+          if-no-files-found: error
