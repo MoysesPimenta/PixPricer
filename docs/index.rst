@@ -9,4 +9,5 @@ architecture notes, developer guides and API references.
    :caption: Contents:
 
    ACCESSIBILITY
+   ARCHITECTURE_DECISIONS
 
