@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Simple pre-commit hook to ensure Dart code is formatted and analyzed
+# Simple pre-commit hook to ensure Dart code is formatted, analyzed and tested
 set -euo pipefail
 
 if command -v fvm >/dev/null 2>&1; then
@@ -8,5 +8,16 @@ else
   FVM_CMD="flutter"
 fi
 
-$FVM_CMD format --set-exit-if-changed .
-$FVM_CMD analyze
+# Determine staged Dart files
+STAGED_FILES=$(git diff --cached --name-only -- '*.dart')
+
+if [[ -n "$STAGED_FILES" ]]; then
+  # Format only the staged Dart files
+  $FVM_CMD format --set-exit-if-changed $STAGED_FILES
+
+  # Analyze staged Dart files and treat warnings as errors
+  $FVM_CMD analyze --fatal-warnings $STAGED_FILES
+fi
+
+# Run tests with coverage; fail hook on any test failure
+$FVM_CMD test --coverage
