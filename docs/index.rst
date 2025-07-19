@@ -12,6 +12,14 @@ architecture notes, developer guides and API references.
    ARCHITECTURE_DECISIONS
    perf_report
 
+API Reference
+-------------
+
+.. toctree::
+   :maxdepth: 2
+
+   api/modules
+
 Color Palette and Contrast
 -------------------------
 
