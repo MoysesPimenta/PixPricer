@@ -47,9 +47,11 @@ See `docs/Blueprint.pdf` (generated from the canvas blueprint) for the high‑le
 2. Run `./scripts/bootstrap.sh` → installs Flutter 3.22, Dart SDK, FVM, pre‑commit hooks.
 3. `fvm flutter pub get` – resolves all packages.
 4. `melos bootstrap` – link local packages within the repo.
-5. `fvm flutter run -d ios`, `-d android` – verify demo app builds (empty shell).
-6. Run unit tests: `flutter test` (should pass 100%).
-7. Read the [Coding Standards](#16-contribution-guidelines) section.
+5. `npm install` – install JavaScript and CSS tooling.
+6. `npm run lint:js` & `npm run lint:css` followed by `npm run format` – verify JS/CSS style.
+7. `fvm flutter run -d ios`, `-d android` – verify demo app builds (empty shell).
+8. Run unit tests: `flutter test` (should pass 100%).
+9. Read the [Coding Standards](#16-contribution-guidelines) section.
 
 > **Goal:** You should have a compiling app scaffold and a green test suite within **15 minutes** on a standard macOS or Ubuntu workstation.
 
