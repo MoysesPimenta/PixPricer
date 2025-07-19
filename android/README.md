@@ -1,1 +1,1 @@
-Placeholder for Android project
+Flutter Android runner project. Generated from `flutter create`.
