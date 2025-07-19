@@ -15,6 +15,7 @@ class AppLocalizations {
   static const supportedLocales = [
     Locale('en'),
     Locale('pt', 'BR'),
+    Locale('es', 'ES'),
   ];
 
   /// Delegate to integrate with [MaterialApp].

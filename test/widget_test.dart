@@ -7,4 +7,11 @@ void main() {
     await tester.pumpWidget(const PixPricerApp());
     expect(find.text('Hello'), findsOneWidget);
   });
+
+  testWidgets('App displays hola text for Spanish locale', (tester) async {
+    await tester.binding.setLocale('es', 'ES');
+    await tester.pumpWidget(const PixPricerApp());
+    await tester.pump();
+    expect(find.text('Hola'), findsOneWidget);
+  });
 }
