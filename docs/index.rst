@@ -11,6 +11,14 @@ architecture notes, developer guides and API references.
    ACCESSIBILITY
    ARCHITECTURE_DECISIONS
 
+API Reference
+-------------
+
+.. toctree::
+   :maxdepth: 2
+
+   api/modules
+
 Color Palette and Contrast
 -------------------------
 
