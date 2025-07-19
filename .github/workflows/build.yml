@@ -54,17 +54,32 @@ jobs:
             echo "exists=false" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Flutter Analyze
+        if: steps.project-check.outputs.exists == 'true'
+        run: flutter analyze --fatal-infos --fatal-warnings
+
       - name: Run Tests
         if: steps.project-check.outputs.exists == 'true'
         run: flutter test --coverage
+
+      - name: Run Benchmarks
+        if: steps.project-check.outputs.exists == 'true'
+        run: ./scripts/run_benchmarks.sh
 
       - name: Build Android
         if: steps.project-check.outputs.exists == 'true' && matrix.platform == 'android'
         run: flutter build apk --debug
 
+
       - name: Build iOS
         if: steps.project-check.outputs.exists == 'true' && matrix.platform == 'ios'
         run: flutter build ios --no-codesign
+
+      - name: MobSF Scan
+        if: steps.project-check.outputs.exists == 'true'
+        run: |
+          pip install --quiet mobsfscan
+          mobsfscan --no-progress --exit-code 1 .
 
       - name: Upload artifacts
         if: steps.project-check.outputs.exists == 'true'
