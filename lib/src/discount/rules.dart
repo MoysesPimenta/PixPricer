@@ -1,3 +1,5 @@
+// Copyright (c) 2025 Shopping Bill App Project
+// SPDX-License-Identifier: MIT
 /// Discount rule model and implementations.
 ///
 /// Provides classes to represent discount rules and logic to parse

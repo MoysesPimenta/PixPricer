@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# Copyright (c) 2025 Shopping Bill App Project
+# SPDX-License-Identifier: MIT
 # Run Flutter tests with coverage and ensure minimum threshold.
 set -euo pipefail
 

@@ -21,21 +21,45 @@ if [ -n "$DART_FILES" ]; then
 fi
 
 # Verify MIT license headers on staged files
-HEADER1='# Copyright (c) 2025 Shopping Bill App Project'
-HEADER2='# SPDX-License-Identifier: MIT'
+HEADER_TEXT='Copyright (c) 2025 Shopping Bill App Project'
+HEADER_ID='SPDX-License-Identifier: MIT'
 MISSING=0
 
+# Determine expected header lines based on file extension
 check_header() {
   file="$1"
-  header="$(git show ":$file" | head -n 2)"
+  prefix="#"
+  suffix=""
+  case "$file" in
+    *.dart|*.swift|*.kt)
+      prefix="//"
+      ;;
+    *.md)
+      prefix="<!--"
+      suffix=" -->"
+      ;;
+    *.rst)
+      prefix=".."
+      ;;
+  esac
+
+  header="$(git show ":$file" | head -n 3)"
   line1=$(printf '%s\n' "$header" | sed -n '1p')
   line2=$(printf '%s\n' "$header" | sed -n '2p')
-  [ "$line1" = "$HEADER1" ] && [ "$line2" = "$HEADER2" ]
+  if echo "$line1" | grep -q '^#!'; then
+    line1=$(printf '%s\n' "$header" | sed -n '2p')
+    line2=$(printf '%s\n' "$header" | sed -n '3p')
+  fi
+
+  expected1="$prefix $HEADER_TEXT$suffix"
+  expected2="$prefix $HEADER_ID$suffix"
+
+  [ "$line1" = "$expected1" ] && [ "$line2" = "$expected2" ]
 }
 
 for file in $STAGED_FILES; do
   case "$file" in
-    *.dart|*.sh|*.swift|*.yaml|*.yml)
+    *.dart|*.sh|*.swift|*.kt|*.yaml|*.yml|*.md|*.rst)
       if ! check_header "$file"; then
         printf '%s is missing the MIT license header.\n' "$file"
         MISSING=1

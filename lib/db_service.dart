@@ -1,3 +1,5 @@
+// Copyright (c) 2025 Shopping Bill App Project
+// SPDX-License-Identifier: MIT
 /// Very small in-memory database used for unit tests.
 ///
 /// The real application will use Drift/SQLite, but this lightweight

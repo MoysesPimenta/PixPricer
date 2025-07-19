@@ -1,3 +1,5 @@
+<!-- Copyright (c) 2025 Shopping Bill App Project -->
+<!-- SPDX-License-Identifier: MIT -->
 # Performance Benchmark Report
 
 The nightly benchmark workflow executes micro benchmarks located in the
