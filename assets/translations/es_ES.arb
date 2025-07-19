@@ -1,3 +1,9 @@
 {
-  "hello": "Hola"
+  "@@locale": "es_ES",
+  "appTitle": "PixPricer",
+  "hello": "Hola",
+  "scanButton": "Escanear Etiqueta",
+  "galleryButton": "Elegir de Galería",
+  "totalLabel": "Total",
+  "discountLabel": "Descuento"
 }
