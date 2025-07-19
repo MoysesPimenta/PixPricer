@@ -34,6 +34,7 @@ dev_dependencies:
   accessibility_test: any
   pedantic: ^1.11.1
   riverpod_lint: ^2.0.0
+  benchmark_harness: any
 
 flutter:
   generate: true
