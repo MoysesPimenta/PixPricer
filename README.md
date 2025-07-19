@@ -37,7 +37,7 @@ A cross‑platform mobile application that enables shoppers to photograph shelf 
 * Flag mismatches for user dispute
 
 *Design pillars: camera‑first, offline‑first, privacy‑centric, and <2 s end‑to‑end latency).*
-See `docs/Blueprint.pdf` (generated from the canvas blueprint) for the high‑level product definition.
+See `docs/Blueprint.md` (generated from the canvas blueprint) for the high‑level product definition.
 
 ---
 
