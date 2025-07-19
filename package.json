@@ -1,0 +1,17 @@
+{
+  "name": "pix-pricer",
+  "private": true,
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "prettier": "^2.8.0",
+    "eslint-plugin-flowtype": "^8.0.0",
+    "flow-bin": "^0.201.0",
+    "stylelint": "^15.0.0",
+    "stylelint-config-standard": "^33.0.0"
+  },
+  "scripts": {
+    "lint:js": "eslint .",
+    "lint:css": "stylelint \"**/*.css\"",
+    "format": "prettier --check ."
+  }
+}
