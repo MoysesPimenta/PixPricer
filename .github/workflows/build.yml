@@ -14,7 +14,18 @@ jobs:
       matrix:
         platform: [android, ios]
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Cache Flutter SDK
+        uses: actions/cache@v3
+        with:
+          path: ~/flutter
+          key: ${{ runner.os }}-flutter-${{ hashFiles('**/pubspec.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-flutter-
 
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
@@ -61,3 +72,4 @@ jobs:
         with:
           name: app-${{ matrix.platform }}
           path: build
+          if-no-files-found: error
