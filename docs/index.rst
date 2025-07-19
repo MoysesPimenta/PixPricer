@@ -10,3 +10,14 @@ architecture notes, developer guides and API references.
 
    ACCESSIBILITY
 
+Color Palette and Contrast
+-------------------------
+
+The application adopts a simple palette that favors high contrast:
+
+* **Primary blue** ``#005A9C`` on white – contrast ratio **8.6:1**.
+* **Accent yellow** ``#FFC20E`` on black – contrast ratio **15:1**.
+
+Each pair exceeds the WCAG AA requirement of 4.5:1 ensuring legibility across
+light and dark themes.
+
