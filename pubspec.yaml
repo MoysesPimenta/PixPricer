@@ -1,23 +1,30 @@
 name: pix_pricer
 
-description: Localization scaffolding.
+description: PixPricer Flutter app scaffolding with planned state management and local storage.
 
 publish_to: 'none'
 
-version: 0.1.0
+version: 0.1.0-dev
 
 environment:
-  sdk: ">=2.17.0 <3.0.0"
+  sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  flutter_secure_storage: any
+  flutter_riverpod: any
+  drift: any
+  sqlite3_flutter_libs: any
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  riverpod_generator: any
+  build_runner: any
+  drift_dev: any
 
 flutter:
   uses-material-design: true
