@@ -50,6 +50,7 @@ See `docs/Blueprint.pdf` (generated from the canvas blueprint) for the high‑le
 5. `fvm flutter run -d ios`, `-d android` – verify demo app builds (empty shell).
 6. Run unit tests: `flutter test` (should pass 100%).
 7. Read the [Coding Standards](#16-contribution-guidelines) section.
+8. Create `alpha` and `beta` branches from `main` and enable branch protection on `main` in GitHub settings.
 
 > **Goal:** You should have a compiling app scaffold and a green test suite within **15 minutes** on a standard macOS or Ubuntu workstation.
 
