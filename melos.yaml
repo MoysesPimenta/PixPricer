@@ -6,5 +6,5 @@ packages:
   - .
 
 scripts:
-  lint: flutter analyze
+  lint: flutter analyze --fatal-infos
   format: flutter format .
