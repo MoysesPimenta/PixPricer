@@ -13,6 +13,7 @@ architecture notes, developer guides and API references.
    ACCESSIBILITY
    ARCHITECTURE_DECISIONS
    perf_report
+   security_audit
 
 API Reference
 -------------
