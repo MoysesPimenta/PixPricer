@@ -255,8 +255,9 @@ Secrets stored as GitHub encrypted secrets (`APPSTORE_CONNECT_API_KEY`, `PLAY_KE
 * **Pull Requests:** Must reference requirement ID(s) & include test evidence.
 * **Code Style:** run `flutter format .` & `dart fix --apply`.
 * **Static Analysis:** `flutter analyze` + `melos run lint` must pass.
-* **Linters:** run `flake8` and `mypy` for Python sources, `npm run lint:js`,
-  `npm run lint:css`, and `npm run format` for JavaScript/CSS.
+* **Linters:** run `flake8` and `mypy` for Python sources. For JavaScript and CSS
+  sources, first run `npm install` then `npm run lint:js`,
+  `npm run lint:css`, and `npm run format`.
 
 PRs auto‑labelled via `.github/labeler.yml`.
 
