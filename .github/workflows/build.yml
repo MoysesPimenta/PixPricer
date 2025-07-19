@@ -1,0 +1,30 @@
+name: Build
+
+on:
+  push:
+    branches: [main, beta, alpha]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        platform: [android, ios]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.22.0'
+      - run: flutter pub get
+      - run: flutter test --coverage
+      - name: Build Android
+        if: matrix.platform == 'android'
+        run: flutter build apk --debug
+      - name: Build iOS
+        if: matrix.platform == 'ios'
+        run: flutter build ios --no-codesign
+      - uses: actions/upload-artifact@v3
+        with:
+          name: app-${{ matrix.platform }}
+          path: build
