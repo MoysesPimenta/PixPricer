@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:pix_pricer/main.dart';
 
 void main() {
-  testWidgets('App displays hello text', (tester) async {
+  testWidgets('App displays greeting with semantics label', (tester) async {
     await tester.pumpWidget(const PixPricerApp());
-    expect(find.text('Hello'), findsOneWidget);
+    expect(find.bySemanticsLabel('Greeting'), findsOneWidget);
   });
 }
