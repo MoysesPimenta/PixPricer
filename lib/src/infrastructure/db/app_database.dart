@@ -1,3 +1,5 @@
+// Copyright (c) 2025 Shopping Bill App Project
+// SPDX-License-Identifier: MIT
 import 'dart:convert';
 import 'dart:math';
 import 'dart:io';

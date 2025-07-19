@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# Copyright (c) 2025 Shopping Bill App Project
+# SPDX-License-Identifier: MIT
 # Run Flutter benchmarks and fail on regressions
 set -euo pipefail
 

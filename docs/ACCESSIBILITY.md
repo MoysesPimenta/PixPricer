@@ -1,3 +1,5 @@
+<!-- Copyright (c) 2025 Shopping Bill App Project -->
+<!-- SPDX-License-Identifier: MIT -->
 # Accessibility Guidelines
 
 PixPricer follows the WCAG 2.1 guidelines for text contrast. All text

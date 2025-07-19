@@ -1,3 +1,5 @@
+// Copyright (c) 2025 Shopping Bill App Project
+// SPDX-License-Identifier: MIT
 import 'package:flutter_test/flutter_test.dart';
 import 'package:drift/drift.dart';
 import 'package:drift/native.dart';

@@ -1,3 +1,5 @@
+// Copyright (c) 2025 Shopping Bill App Project
+// SPDX-License-Identifier: MIT
 /// Discount rule abstractions and helpers.
 ///
 /// Provides a base [DiscountRule] interface and a simple

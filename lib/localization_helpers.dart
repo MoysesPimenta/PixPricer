@@ -1,3 +1,5 @@
+// Copyright (c) 2025 Shopping Bill App Project
+// SPDX-License-Identifier: MIT
 /// Localization utilities used across the app.
 ///
 /// Contains simple helpers to retrieve localized strings without a

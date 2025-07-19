@@ -1,3 +1,5 @@
+<!-- Copyright (c) 2025 Shopping Bill App Project -->
+<!-- SPDX-License-Identifier: MIT -->
 # Changelog
 
 All notable changes to this project will be documented in this file.

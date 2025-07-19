@@ -1,3 +1,5 @@
+// Copyright (c) 2025 Shopping Bill App Project
+// SPDX-License-Identifier: MIT
 import 'dart:io';
 
 /// Runs all benchmark scenarios sequentially.
