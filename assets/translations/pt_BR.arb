@@ -1,3 +1,12 @@
 {
-  "hello": "Olá"
+  "appTitle": "Pix Pricer",
+  "cameraScreenTitle": "Câmera",
+  "cartListTitle": "Carrinho",
+  "reconcileScreenTitle": "Conciliar",
+  "addItemLabel": "Adicionar Item",
+  "deleteItemLabel": "Excluir",
+  "shareLabel": "Compartilhar",
+  "settingsLabel": "Configurações",
+  "okButton": "OK",
+  "cancelButton": "Cancelar"
 }
