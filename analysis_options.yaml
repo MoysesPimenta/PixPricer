@@ -1,9 +1,16 @@
 # Copyright (c) 2025 Shopping Bill App Project
 # SPDX-License-Identifier: MIT
-include: package:flutter_lints/flutter.yaml
+include: package:pedantic/analysis_options.yaml
 
 analyzer:
+  plugins:
+    - riverpod_lint
   exclude:
     - 'build/**'
   errors:
     todo: error
+
+linter:
+  rules:
+    public_member_api_docs: true
+    prefer_const_constructors: true
