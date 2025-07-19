@@ -3,7 +3,14 @@
 include: package:flutter_lints/flutter.yaml
 
 analyzer:
+  plugins:
+    - riverpod_lint
   exclude:
     - 'build/**'
   errors:
     todo: error
+
+linter:
+  rules:
+    public_member_api_docs: true
+    prefer_const_constructors: true
