@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# Copyright (c) 2025 Shopping Bill App Project
+# SPDX-License-Identifier: MIT
 # Bootstrap script to set up development environment
 # Installs FVM, configures git hooks, and runs flutter pub get
 set -euo pipefail

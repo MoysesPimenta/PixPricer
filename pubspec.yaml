@@ -1,3 +1,5 @@
+# Copyright (c) 2025 Shopping Bill App Project
+# SPDX-License-Identifier: MIT
 name: pix_pricer
 
 description: PixPricer Flutter app scaffolding with planned state management and local storage.
