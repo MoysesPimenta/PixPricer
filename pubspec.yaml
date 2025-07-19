@@ -4,7 +4,7 @@ name: pix_pricer
 
 description: PixPricer Flutter app scaffolding with planned state management and local storage.
 
-publish_to: 'none'
+publish_to: "none"
 
 version: 0.1.0-dev
 
@@ -27,6 +27,7 @@ dev_dependencies:
   riverpod_generator: any
   build_runner: any
   drift_dev: any
+  accessibility_test: any
 
 flutter:
   uses-material-design: true
