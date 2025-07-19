@@ -10,6 +10,7 @@ architecture notes, developer guides and API references.
 
    ACCESSIBILITY
    ARCHITECTURE_DECISIONS
+   security_audit
 
 Color Palette and Contrast
 -------------------------

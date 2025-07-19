@@ -62,9 +62,23 @@ jobs:
         if: steps.project-check.outputs.exists == 'true' && matrix.platform == 'android'
         run: flutter build apk --debug
 
+      - name: MobSF Scan Android
+        if: steps.project-check.outputs.exists == 'true' && matrix.platform == 'android'
+        uses: MobSF/mobsf-action@v1
+        with:
+          artifact_path: build/app/outputs/flutter-apk/app-debug.apk
+          platform: android
+
       - name: Build iOS
         if: steps.project-check.outputs.exists == 'true' && matrix.platform == 'ios'
         run: flutter build ios --no-codesign
+
+      - name: MobSF Scan iOS
+        if: steps.project-check.outputs.exists == 'true' && matrix.platform == 'ios'
+        uses: MobSF/mobsf-action@v1
+        with:
+          artifact_path: build/ios/iphoneos/Runner.app
+          platform: ios
 
       - name: Upload artifacts
         if: steps.project-check.outputs.exists == 'true'
