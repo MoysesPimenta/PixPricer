@@ -1,3 +1,13 @@
 {
-  "hello": "Hello"
+  "hello": "Hello",
+  "camera_title": "Camera",
+  "cart_title": "Cart",
+  "reconcile_title": "Reconcile",
+  "scan_button": "Scan",
+  "add_item_button": "Add item",
+  "checkout_button": "Checkout",
+  "settings_title": "Settings",
+  "language_label": "Language",
+  "confirm": "Confirm",
+  "cancel": "Cancel"
 }

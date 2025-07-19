@@ -20,6 +20,7 @@ dependencies:
   flutter_riverpod: any
   drift: any
   sqlite3_flutter_libs: any
+  intl: any
 
 dev_dependencies:
   flutter_test:
@@ -30,6 +31,7 @@ dev_dependencies:
   accessibility_test: any
 
 flutter:
+  generate: true
   uses-material-design: true
   assets:
     - assets/translations/

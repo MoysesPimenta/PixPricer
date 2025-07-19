@@ -30,13 +30,13 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final loc = AppLocalizations.of(context);
+    final loc = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(title: const Text('PixPricer')),
       body: Center(
         child: Semantics(
-          label: loc.text('hello'),
-          child: Text(loc.text('hello')),
+          label: loc.hello,
+          child: Text(loc.hello),
         ),
       ),
     );

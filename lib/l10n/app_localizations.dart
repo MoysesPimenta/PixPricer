@@ -40,6 +40,19 @@ class AppLocalizations {
 
   /// Returns the localized string for [key].
   String text(String key) => _sentences[key] ?? key;
+
+  /// All localized getters.
+  String get hello => text('hello');
+  String get cameraTitle => text('camera_title');
+  String get cartTitle => text('cart_title');
+  String get reconcileTitle => text('reconcile_title');
+  String get scanButton => text('scan_button');
+  String get addItemButton => text('add_item_button');
+  String get checkoutButton => text('checkout_button');
+  String get settingsTitle => text('settings_title');
+  String get languageLabel => text('language_label');
+  String get confirm => text('confirm');
+  String get cancel => text('cancel');
 }
 
 class _AppLocalizationsDelegate

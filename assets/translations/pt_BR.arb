@@ -1,3 +1,13 @@
 {
-  "hello": "Olá"
+  "hello": "Olá",
+  "camera_title": "Câmera",
+  "cart_title": "Carrinho",
+  "reconcile_title": "Reconciliar",
+  "scan_button": "Escanear",
+  "add_item_button": "Adicionar item",
+  "checkout_button": "Finalizar compra",
+  "settings_title": "Configurações",
+  "language_label": "Idioma",
+  "confirm": "Confirmar",
+  "cancel": "Cancelar"
 }
