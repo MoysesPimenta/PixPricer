@@ -1,3 +1,7 @@
+<!--
+Copyright (c) 2025 Shopping Bill App Project
+SPDX-License-Identifier: MIT
+-->
 # Shopping Bill App – Developer README
 
 > **Audience:** Autonomous or human developers tasked with building the Shopping Bill App for iOS & Android. Follow this document *verbatim* to set up the workspace, implement features, and verify completeness.

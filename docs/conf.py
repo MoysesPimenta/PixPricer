@@ -1,3 +1,5 @@
+# Copyright (c) 2025 Shopping Bill App Project
+# SPDX-License-Identifier: MIT
 """Sphinx configuration for the PixPricer project."""
 
 from __future__ import annotations

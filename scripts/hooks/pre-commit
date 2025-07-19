@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# Copyright (c) 2025 Shopping Bill App Project
+# SPDX-License-Identifier: MIT
 # Simple pre-commit hook to ensure Dart code is formatted, analyzed and tested
 # TODO: verify MIT license headers automatically
 set -euo pipefail

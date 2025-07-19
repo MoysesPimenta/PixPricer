@@ -1,3 +1,7 @@
+<!--
+Copyright (c) 2025 Shopping Bill App Project
+SPDX-License-Identifier: MIT
+-->
 # Architecture Decisions
 
 This document records notable architectural choices made for PixPricer.

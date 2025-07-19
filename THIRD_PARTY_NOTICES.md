@@ -1,3 +1,7 @@
+<!--
+Copyright (c) 2025 Shopping Bill App Project
+SPDX-License-Identifier: MIT
+-->
 # Third-Party Notices
 
 This file lists third-party packages used by PixPricer. Licensing details will be added in a future revision.
