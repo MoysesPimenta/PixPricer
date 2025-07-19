@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'src/presentation/camera_screen.dart';
+import 'src/presentation/cart_list_screen.dart';
+import 'src/presentation/reconcile_screen.dart';
+import 'src/presentation/settings_screen.dart';
 
 void main() {
   runApp(const PixPricerApp());
@@ -30,21 +34,74 @@ class PixPricerApp extends StatelessWidget {
   }
 }
 
-/// Simple home page displaying a localized greeting.
+/// Home page presenting navigation to core features.
 class MyHomePage extends StatelessWidget {
   /// Creates a [MyHomePage].
   const MyHomePage({super.key});
 
-  /// Builds the scaffold containing the greeting text.
+  /// Builds the scaffold containing navigation buttons.
   @override
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(title: Text(loc.appTitle)),
-      body: Center(
-        child: Semantics(
-          label: loc.hello,
-          child: Text(loc.hello),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Semantics(
+              button: true,
+              label: loc.cameraScreenTitle,
+              child: ElevatedButton(
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const CameraScreen()),
+                ),
+                style: ElevatedButton.styleFrom(minimumSize: const Size(48, 48)),
+                child: Text(loc.cameraScreenTitle),
+              ),
+            ),
+            const SizedBox(height: 16),
+            Semantics(
+              button: true,
+              label: loc.cartListTitle,
+              child: ElevatedButton(
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const CartListScreen()),
+                ),
+                style: ElevatedButton.styleFrom(minimumSize: const Size(48, 48)),
+                child: Text(loc.cartListTitle),
+              ),
+            ),
+            const SizedBox(height: 16),
+            Semantics(
+              button: true,
+              label: loc.reconcileScreenTitle,
+              child: ElevatedButton(
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const ReconcileScreen()),
+                ),
+                style: ElevatedButton.styleFrom(minimumSize: const Size(48, 48)),
+                child: Text(loc.reconcileScreenTitle),
+              ),
+            ),
+            const SizedBox(height: 16),
+            Semantics(
+              button: true,
+              label: loc.settingsButton,
+              child: ElevatedButton(
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const SettingsScreen()),
+                ),
+                style: ElevatedButton.styleFrom(minimumSize: const Size(48, 48)),
+                child: Text(loc.settingsButton),
+              ),
+            ),
+          ],
         ),
       ),
     );

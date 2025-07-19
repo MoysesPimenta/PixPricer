@@ -12,5 +12,8 @@
   "settingsButton": "Settings",
   "languageLabel": "Language",
   "cancelButton": "Cancel",
-  "confirmButton": "Confirm"
+  "confirmButton": "Confirm",
+  "cartEmptyMessage": "No items in cart",
+  "reconcileButton": "Reconcile Now",
+  "exportButton": "Export"
 }

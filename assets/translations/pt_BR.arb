@@ -12,5 +12,8 @@
   "settingsButton": "Configurações",
   "languageLabel": "Idioma",
   "cancelButton": "Cancelar",
-  "confirmButton": "Confirmar"
+  "confirmButton": "Confirmar",
+  "cartEmptyMessage": "Nenhum item no carrinho",
+  "reconcileButton": "Reconciliar Agora",
+  "exportButton": "Exportar"
 }
