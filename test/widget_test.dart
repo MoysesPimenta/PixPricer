@@ -6,6 +6,7 @@ void main() {
   testWidgets('App displays hello text', (tester) async {
     await tester.pumpWidget(const PixPricerApp());
     expect(find.text('Hello'), findsOneWidget);
+    expect(find.bySemanticsLabel('Hello'), findsOneWidget);
   });
 
   testWidgets('App displays hola text for Spanish locale', (tester) async {
@@ -13,5 +14,6 @@ void main() {
     await tester.pumpWidget(const PixPricerApp());
     await tester.pump();
     expect(find.text('Hola'), findsOneWidget);
+    expect(find.bySemanticsLabel('Hola'), findsOneWidget);
   });
 }
