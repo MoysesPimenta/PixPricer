@@ -1,21 +1,52 @@
-#!/usr/bin/env bash
-# Simple pre-commit hook to ensure Dart code is formatted, analyzed and tested
-# TODO: verify MIT license headers automatically
-set -euo pipefail
+#!/bin/sh
+# Simple POSIX pre-commit hook to ensure code quality and MIT headers
+set -eu
 
 if command -v fvm >/dev/null 2>&1; then
-  FVM_CMD="fvm flutter"
+  FVM_CMD='fvm flutter'
 else
-  FVM_CMD="flutter"
+  FVM_CMD='flutter'
 fi
 
-# Only consider staged Dart files
-STAGED_DART_FILES=$(git diff --cached --name-only -- '*.dart')
+# Gather all staged files
+STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM)
 
-if [[ -n "$STAGED_DART_FILES" ]]; then
+# Only consider staged Dart files for formatting and analysis
+DART_FILES=$(printf '%s\n' "$STAGED_FILES" | grep '\.dart$' || true)
+
+if [ -n "$DART_FILES" ]; then
   # Format and analyze the staged files only
-  $FVM_CMD format --set-exit-if-changed $STAGED_DART_FILES
-  $FVM_CMD analyze $STAGED_DART_FILES
+  $FVM_CMD format --set-exit-if-changed $DART_FILES
+  $FVM_CMD analyze $DART_FILES
+fi
+
+# Verify MIT license headers on staged files
+HEADER1='# Copyright (c) 2025 Shopping Bill App Project'
+HEADER2='# SPDX-License-Identifier: MIT'
+MISSING=0
+
+check_header() {
+  file="$1"
+  header="$(git show ":$file" | head -n 2)"
+  line1=$(printf '%s\n' "$header" | sed -n '1p')
+  line2=$(printf '%s\n' "$header" | sed -n '2p')
+  [ "$line1" = "$HEADER1" ] && [ "$line2" = "$HEADER2" ]
+}
+
+for file in $STAGED_FILES; do
+  case "$file" in
+    *.dart|*.sh|*.swift|*.yaml|*.yml)
+      if ! check_header "$file"; then
+        printf '%s is missing the MIT license header.\n' "$file"
+        MISSING=1
+      fi
+      ;;
+  esac
+done
+
+if [ "$MISSING" -ne 0 ]; then
+  echo "Commit aborted due to missing license headers."
+  exit 1
 fi
 
 # Always run tests with coverage
