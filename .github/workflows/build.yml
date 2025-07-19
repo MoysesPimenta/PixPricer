@@ -75,6 +75,14 @@ jobs:
         if: steps.project-check.outputs.exists == 'true' && matrix.platform == 'ios'
         run: flutter build ios --no-codesign
 
+      - name: MobSF Artifact Scan
+        if: steps.project-check.outputs.exists == 'true'
+        run: |
+          docker pull opensecurity/mobile-security-framework-mobsf:latest
+          BUILD_FILE=$(find build -name '*.apk' -o -name '*.ipa' | head -n 1)
+          docker run --rm -v "$(pwd)/build:/app" opensecurity/mobile-security-framework-mobsf:latest \ 
+            mobsfscan "$BUILD_FILE" --exit-code 1
+
       - name: MobSF Scan
         if: steps.project-check.outputs.exists == 'true'
         run: |
