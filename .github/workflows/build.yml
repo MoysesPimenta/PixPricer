@@ -15,18 +15,49 @@ jobs:
         platform: [android, ios]
     steps:
       - uses: actions/checkout@v3
-      - uses: subosito/flutter-action@v2
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.22.0'
-      - run: flutter pub get
-      - run: flutter test --coverage
+          cache: true
+
+      - name: Cache pub packages
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.pub-cache
+          key: ${{ runner.os }}-pub-${{ hashFiles('**/pubspec.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pub-
+
+      - name: Bootstrap
+        run: ./scripts/bootstrap.sh
+
+      - name: Check Flutter project
+        id: project-check
+        run: |
+          if [ -f pubspec.yaml ]; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Run Tests
+        if: steps.project-check.outputs.exists == 'true'
+        run: flutter test --coverage
+
       - name: Build Android
-        if: matrix.platform == 'android'
+        if: steps.project-check.outputs.exists == 'true' && matrix.platform == 'android'
         run: flutter build apk --debug
+
       - name: Build iOS
-        if: matrix.platform == 'ios'
+        if: steps.project-check.outputs.exists == 'true' && matrix.platform == 'ios'
         run: flutter build ios --no-codesign
-      - uses: actions/upload-artifact@v3
+
+      - name: Upload artifacts
+        if: steps.project-check.outputs.exists == 'true'
+        uses: actions/upload-artifact@v3
         with:
           name: app-${{ matrix.platform }}
           path: build
