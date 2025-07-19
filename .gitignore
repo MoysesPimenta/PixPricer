@@ -1,0 +1,32 @@
+# Flutter / Dart tool defaults
+.dart_tool/
+.packages
+.pub-cache/
+build/
+flutter_*.png
+
+# Android specific
+android/.gradle/
+android/captures/
+android/key.properties
+**/android/**/build/
+
+# iOS specific
+ios/Flutter/App.framework
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Flutter/Generated.xcconfig
+ios/Flutter/*.xcframework
+ios/.symlinks
+ios/Pods/
+**/ios/**/build/
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# Others
+.DS_Store
+*.log
+
