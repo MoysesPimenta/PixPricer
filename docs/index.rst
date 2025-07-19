@@ -8,3 +8,5 @@ architecture notes, developer guides and API references.
    :maxdepth: 2
    :caption: Contents:
 
+   ACCESSIBILITY
+
