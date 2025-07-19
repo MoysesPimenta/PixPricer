@@ -32,8 +32,8 @@ dev_dependencies:
   build_runner: any
   drift_dev: any
   accessibility_test: any
-  pedantic: any
-  riverpod_lint: any
+  pedantic: ^1.11.1
+  riverpod_lint: ^2.0.0
 
 flutter:
   uses-material-design: true
