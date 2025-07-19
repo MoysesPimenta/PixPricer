@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Simple pre-commit hook to ensure Dart code is formatted and analyzed
+set -euo pipefail
+
+if command -v fvm >/dev/null 2>&1; then
+  FVM_CMD="fvm flutter"
+else
+  FVM_CMD="flutter"
+fi
+
+$FVM_CMD format --set-exit-if-changed .
+$FVM_CMD analyze
