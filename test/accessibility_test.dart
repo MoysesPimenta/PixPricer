@@ -1,0 +1,14 @@
+import 'package:accessibility_test/accessibility_test.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:pix_pricer/main.dart';
+
+void main() {
+  testWidgets('Home page colors meet contrast guidelines', (tester) async {
+    await tester.pumpWidget(const PixPricerApp());
+    await expectLater(
+      find.byType(MyHomePage),
+      meetsGuideline(textContrastGuideline),
+    );
+  });
+}
