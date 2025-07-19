@@ -1,0 +1,8 @@
+name: shopping_bill_app
+
+packages:
+  - .
+
+scripts:
+  lint: flutter analyze
+  format: flutter format .
