@@ -182,6 +182,11 @@ Full schema tables auto‑generated in Drift; see `lib/src/infrastructure/db/sch
 
 Wireframes located in `docs/wireframes/` (Figma export → PNG).
 
+
+## Accessibility
+
+Refer to docs/accessibility.md for color contrast ratios and semantics guidelines.
+
 ---
 
 ## 11  Performance Targets & Benchmarks
