@@ -5,5 +5,12 @@
   "scanButton": "Escanear Etiqueta",
   "galleryButton": "Escolher da Galeria",
   "totalLabel": "Total",
-  "discountLabel": "Desconto"
+  "discountLabel": "Desconto",
+  "cameraScreenTitle": "Câmera",
+  "cartListTitle": "Carrinho",
+  "reconcileScreenTitle": "Reconciliar",
+  "settingsButton": "Configurações",
+  "languageLabel": "Idioma",
+  "cancelButton": "Cancelar",
+  "confirmButton": "Confirmar"
 }

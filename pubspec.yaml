@@ -36,6 +36,7 @@ dev_dependencies:
   riverpod_lint: any
 
 flutter:
+  generate: true
   uses-material-design: true
   assets:
     - assets/translations/

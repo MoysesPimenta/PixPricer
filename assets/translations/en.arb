@@ -5,5 +5,12 @@
   "scanButton": "Scan Price Tag",
   "galleryButton": "Choose from Gallery",
   "totalLabel": "Total",
-  "discountLabel": "Discount"
+  "discountLabel": "Discount",
+  "cameraScreenTitle": "Camera",
+  "cartListTitle": "Cart",
+  "reconcileScreenTitle": "Reconcile",
+  "settingsButton": "Settings",
+  "languageLabel": "Language",
+  "cancelButton": "Cancel",
+  "confirmButton": "Confirm"
 }
