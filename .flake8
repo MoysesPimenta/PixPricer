@@ -1,3 +1,7 @@
 [flake8]
 max-line-length = 88
-extend-ignore = E203, W503
+extend-ignore = E203, W503, D401
+select = C,E,F,W,B,B950,D
+extend-select = D
+# Use Google style docstrings
+docstring-convention = google
