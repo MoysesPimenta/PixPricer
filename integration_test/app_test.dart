@@ -43,6 +43,7 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.text('Scanned Item'), findsOneWidget);
     expect(find.text('1.23'), findsOneWidget);
+    expect(find.byType(ListTile), findsNWidgets(1));
 
     // Navigate to the reconciliation screen and verify diff rows.
     await tester.pageBack();
