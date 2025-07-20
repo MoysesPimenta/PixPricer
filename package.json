@@ -10,8 +10,8 @@
     "stylelint-config-standard": "^33.0.0"
   },
   "scripts": {
-    "lint:js": "eslint .",
-    "lint:css": "stylelint \"**/*.css\"",
-    "format": "prettier --check ."
+    "lint:js": "eslint --config .eslintrc.json .",
+    "lint:css": "stylelint \"**/*.css\" --config stylelint.config.cjs",
+    "format": "prettier --config .prettierrc --write ."
   }
 }
