@@ -1,2 +1,5 @@
 Sphinx>=7.2
 myst-parser>=2.0
+pydocstyle>=6.3
+docformatter>=1.7
+flake8-docstrings>=1.7
