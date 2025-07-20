@@ -198,6 +198,7 @@ Wireframes located in `docs/wireframes/` (Figma export → PNG).
 | Battery drain          | <5 % over 15 min session       | Android Battery Historian                   |
 
 Add perf tests under `benchmark/` – run on GitHub Actions nightly.
+Benchmark results are summarized in [docs/perf_report.md](docs/perf_report.md).
 
 ---
 
