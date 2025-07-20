@@ -1,0 +1,13 @@
+[ignore]
+
+[include]
+
+[libs]
+
+[lints]
+all=warn
+
+[options]
+module.file_ext=.js
+suppress_comment= \n *\$FlowFixMe
+module.name_mapper='^\(.*\)$' -> '<PROJECT_ROOT>/\1'
