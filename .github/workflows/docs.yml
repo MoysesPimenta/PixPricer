@@ -24,6 +24,8 @@ jobs:
       - run: black --check docs/conf.py
       - run: flake8 docs/conf.py
       - run: mypy --show-error-codes --strict docs/conf.py
+      - run: docformatter --check docs/conf.py
+      - run: pydocstyle docs/conf.py
       - run: sphinx-apidoc -o docs/api lib
       # Build documentation and fail on warnings
       - run: sphinx-build -b html -W --keep-going docs docs/_build/html
