@@ -28,12 +28,27 @@ void main() {
   testWidgets('camera → cart → reconciliation flow', (tester) async {
     await tester.pumpWidget(const PixPricerApp());
 
-    // The app currently only displays a greeting. This is a placeholder until
-    // camera and cart screens are implemented.
-    expect(find.text('Hello'), findsOneWidget);
+    // Navigate to the camera screen and capture a picture.
+    await tester.tap(find.text('Camera'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Scan Price Tag'));
+    await tester.pumpAndSettle();
 
-    // TODO: Navigate to the camera screen and simulate picture capture.
-    // TODO: Verify that the item appears in the cart with the correct subtotal.
-    // TODO: Navigate to the reconciliation screen and verify diff rows.
+    // Return to the home screen.
+    await tester.pageBack();
+    await tester.pumpAndSettle();
+
+    // Verify item appears in the cart with correct price.
+    await tester.tap(find.text('Cart'));
+    await tester.pumpAndSettle();
+    expect(find.text('Scanned Item'), findsOneWidget);
+    expect(find.text('1.23'), findsOneWidget);
+
+    // Navigate to the reconciliation screen and verify diff rows.
+    await tester.pageBack();
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Reconcile'));
+    await tester.pumpAndSettle();
+    expect(find.byKey(const Key('diff_row_0')), findsOneWidget);
   });
 }
