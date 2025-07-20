@@ -12,6 +12,7 @@
   "scripts": {
     "lint:js": "eslint --config .eslintrc.json .",
     "lint:css": "stylelint \"**/*.css\" --config stylelint.config.cjs",
-    "format": "prettier --config .prettierrc --write ."
+    "format": "prettier --config .prettierrc --write .",
+    "lint:docs": "pydocstyle docs && docformatter --check --recursive docs && flake8 docs"
   }
 }
