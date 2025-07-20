@@ -7,9 +7,9 @@ The nightly benchmark workflow executes micro benchmarks located in the
 
 | Metric | Latest Result |
 | ------ | ------------- |
-| OCR latency | Collected from `ocr_latency_benchmark.dart` |
-| CPU workload time | Collected from `cpu_usage_benchmark.dart` |
-| Battery impact | Collected from `battery_impact_benchmark.dart` |
+| OCR latency | *Unavailable* (Dart SDK missing) |
+| CPU workload time | *Unavailable* (Dart SDK missing) |
+| Battery impact | *Unavailable* (Dart SDK missing) |
 
 Benchmarks are run using `dart benchmark/run_benchmarks.dart` on a GitHub
 Actions macOS runner.
