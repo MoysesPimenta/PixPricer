@@ -4,3 +4,11 @@ target-version = ['py310']
 exclude = '''\
 /(\.git|\.hg|\.mypy_cache|\.tox|_build|buck-out|build|dist)/
 '''
+
+[tool.docformatter]
+wrap-summaries = 88
+wrap-descriptions = 88
+
+[tool.pydocstyle]
+convention = "google"
+add-ignore = ["D401"]
