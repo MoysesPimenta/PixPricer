@@ -5,7 +5,7 @@
 [libs]
 
 [lints]
-all=warn
+all=error
 
 [options]
 module.file_ext=.js
